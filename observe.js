@@ -5,17 +5,23 @@ function defineReactive(data, key, val) {
         enumerable: true,
         configurable: true,
         get: function() {
+            if (Dep.target) {
+                dep.addSub(Dep.target);
+            }
             return val;
         },
         set: function(newVal) {
+            if (val === newVal) {
+                return;
+            }
             val = newVal;
-            console.log('属性' + key + '已经被监听了，现在值为：“' + newVal.toString() + '”');
+            dep.notify();
         }
     });
 }
  
 function observe(data) {
-    if (Object.prototype.toString(data0 !== '[object Object]') {
+    if (Object.prototype.toString(data) !== '[object Object]') {
         return;
     }
     Object.keys(data).forEach(function(key) {
