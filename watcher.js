@@ -20,7 +20,7 @@ Watcher.prototype = {
     },
     get: function() {
         Dep.target = this;
-        var value = this.vm.[this.exp];
+        var value = this.vm[this.exp];
         Dep.target = null;
         return value;
     }
