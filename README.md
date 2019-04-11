@@ -4,7 +4,7 @@
 
 
 
-### vue.js文件
+### myvue.js文件
 
 ### observe.js
 > 将数据变成可以观测的，就是用Object.defineProperty进行数据的getter/setter劫持
