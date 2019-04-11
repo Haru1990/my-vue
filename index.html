@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meat charset="UTF-8">
+        <title>双向数据绑定</title>
+        <script src="dep.js"></script>
+        <script src="observer.js"></script>
+        <script src="watcher.js"></script>
+        <script src="myvue.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+    <script type="text/javascript">
+        var ele = document.querySelector('#app');
+        var selfVue = new MyVue({
+            el: ele,
+            data: {
+                name: 'dfx'
+            }
+        });
+
+        
+
+    </script>
+</html>
