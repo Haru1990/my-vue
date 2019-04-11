@@ -1,12 +1,19 @@
 function MyVue (options) {
     var self = this;
     var data = this._data = options.data;
+    this.$options = options;
  
     Object.keys(data).forEach(function(key) {
         self._proxy(key);
     });
  
     observe(options.data);
+    
+    //  在这里手动添加watcher和observe的关系，实际在vue中是通过指令进行关联     
+    this.$options.el.innerHTML = this.name;
+    new Watcher(this, 'name', function(value) {
+        this.$options.el.innerHTML = value;
+    });
 }
 
 MyVue.prototype._proxy = function (key) {
