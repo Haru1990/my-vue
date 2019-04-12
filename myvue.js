@@ -15,9 +15,10 @@ function MyVue (options) {
     //     this.$options.el.innerHTML = value;
     // });
     // 使用compile
-    new Compile(this.$options.el, this);
+    new Compile(options.el, this);
 }
 
+// 将对this.xxx的访问代理到this._data.xxx上面来
 MyVue.prototype._proxy = function (key) {
     var self = this;
     Object.defineProperty(this, key, {
