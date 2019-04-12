@@ -10,12 +10,11 @@
         <script src="myvue.js"></script>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">{{name}}</div>
     </body>
     <script type="text/javascript">
-        var ele = document.querySelector('#app');
         var myVue = new MyVue({
-            el: ele,
+            el: '#app',
             data: {
                 name: 'dfx'
             }
