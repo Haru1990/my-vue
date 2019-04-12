@@ -10,10 +10,12 @@ function MyVue (options) {
     observe(options.data);
     
     //  在这里手动添加watcher和observe的关系，实际在vue中是通过指令进行关联     
-    this.$options.el.innerHTML = this.name;
-    new Watcher(this, 'name', function(value) {
-        this.$options.el.innerHTML = value;
-    });
+    // this.$options.el.innerHTML = this.name;
+    // new Watcher(this, 'name', function(value) {
+    //     this.$options.el.innerHTML = value;
+    // });
+    // 使用compile
+    new Compile(this.$options.el, this);
 }
 
 MyVue.prototype._proxy = function (key) {
