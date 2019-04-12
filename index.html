@@ -10,7 +10,10 @@
         <script src="myvue.js"></script>
     </head>
     <body>
-        <div id="app">{{name}}</div>
+        <div id="app">
+             <input v-model="name" />
+             <p>{{name}}</p>
+        </div>
     </body>
     <script type="text/javascript">
         var myVue = new MyVue({
